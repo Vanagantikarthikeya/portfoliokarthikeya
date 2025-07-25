@@ -69,7 +69,7 @@ const Contact = () => {
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      url: 'https://www.linkedin.com/in/vanaganti-karthikeya-10a246350',
+      url: 'http://www.linkedin.com/in/vanaganti-karthikeya-10a246350',
       color: 'from-blue-600 to-blue-700'
     },
     {

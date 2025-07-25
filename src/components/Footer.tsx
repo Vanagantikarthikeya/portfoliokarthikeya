@@ -7,7 +7,7 @@ const Footer = () => {
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      url: 'https://www.linkedin.com/in/vanaganti-karthikeya-10a246350'
+      url: 'http://www.linkedin.com/in/vanaganti-karthikeya-10a246350'
     },
     {
       name: 'GitHub',
