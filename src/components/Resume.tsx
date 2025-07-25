@@ -101,7 +101,6 @@ const Resume = () => {
           {/* Resume Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-slide-up" style={{ animationDelay: '0.5s' }}>
             {[
-              { label: 'Years of Study', value: '4+', icon: '🎓' },
               { label: 'Projects Built', value: '3+', icon: '🚀' },
               { label: 'Certifications', value: '6+', icon: '🏆' },
               { label: 'Technologies', value: '10+', icon: '💻' }

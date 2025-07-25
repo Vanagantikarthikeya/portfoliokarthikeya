@@ -11,8 +11,8 @@ const Skills = () => {
       skills: [
         { name: 'C#', level: 90 },
         { name: 'ASP.NET', level: 85 },
-        { name: '.NET Core', level: 80 },
-        { name: 'Entity Framework', level: 75 }
+        { name: '.NET Core', level: 60 },
+        { name: 'Entity Framework', level: 60 }
       ]
     },
     {
@@ -29,10 +29,10 @@ const Skills = () => {
       title: 'Web Development',
       icon: Globe,
       skills: [
-        { name: 'JavaScript', level: 85 },
+        { name: 'JavaScript', level: 50 },
         { name: 'Bootstrap', level: 80 },
         { name: 'HTML/CSS', level: 90 },
-        { name: 'REST APIs', level: 85 }
+        { name: 'REST APIs', level: 50 }
       ]
     },
     {
