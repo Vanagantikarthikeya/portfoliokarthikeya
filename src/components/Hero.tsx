@@ -1,6 +1,6 @@
 import { Button } from './ui/button';
 import { Download, ArrowRight } from 'lucide-react';
-import profileImage from '../assets/profile-image.jpg';
+// import profileImage from '../assets/profile-image.jpg';
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -77,7 +77,7 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 hero-gradient rounded-full blur-2xl opacity-50 animate-glow"></div>
               <img
-                src={profileImage}
+                src="/lovable-uploads/ac5c7bab-56a5-4a5b-9643-2be65059c637.png"
                 alt="Vanaganti Karthikeya"
                 className="relative w-80 h-80 rounded-full object-cover shadow-hero border-4 border-primary/20 animate-float"
               />
