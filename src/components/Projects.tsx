@@ -141,13 +141,28 @@ const Projects = () => {
                         <ExternalLink className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
                         View Demo
                       </Button>
-                      <Button 
-                        variant="outline" 
-                        className="border-gradient hover:bg-primary/10 transition-all duration-300 group/btn"
-                      >
-                        <Github className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                        Source Code
-                      </Button>
+                      {project.title === 'Console Chatbot with Gemini API' ? (
+                        <Button 
+                          variant="outline" 
+                          className="border-gradient hover:bg-primary/10 transition-all duration-300 group/btn"
+                          onClick={() => window.open('https://github.com/Vanagantikarthikeya/Console.Chatbot.Gemini.git', '_blank')}
+                        >
+                          <Github className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                          Source Code
+                        </Button>
+                      ) : project.title === 'Viswam AI - Telugu LLM' ? (
+                        <div className="text-sm text-muted-foreground italic">
+                          Presently working on it with Swecha Organization
+                        </div>
+                      ) : (
+                        <Button 
+                          variant="outline" 
+                          className="border-gradient hover:bg-primary/10 transition-all duration-300 group/btn"
+                        >
+                          <Github className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                          Source Code
+                        </Button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -164,7 +179,10 @@ const Projects = () => {
           <p className="text-muted-foreground mb-6">
             More exciting projects coming soon! Follow my journey on GitHub.
           </p>
-          <Button className="hero-gradient shadow-glow hover:shadow-hero transition-bounce">
+          <Button 
+            className="hero-gradient shadow-glow hover:shadow-hero transition-bounce"
+            onClick={() => window.open('https://github.com/Vanagantikarthikeya?tab=repositories', '_blank')}
+          >
             <Github className="h-4 w-4 mr-2" />
             View All Projects
           </Button>
