@@ -134,13 +134,24 @@ const Projects = () => {
 
                     {/* Action Buttons */}
                     <div className="flex flex-wrap gap-4 pt-4">
-                      <Button 
-                        variant="outline" 
-                        className="border-gradient hover:bg-primary/10 transition-all duration-300 group/btn"
-                      >
-                        <ExternalLink className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                        View Demo
-                      </Button>
+                      {project.title === 'Console Chatbot with Gemini API' ? (
+                        <Button 
+                          variant="outline" 
+                          className="border-gradient hover:bg-primary/10 transition-all duration-300 group/btn"
+                          onClick={() => window.open('https://github.com/Vanagantikarthikeya/Console.Chatbot.Gemini/blob/main/README.md', '_blank')}
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                          View Demo
+                        </Button>
+                      ) : (
+                        <Button 
+                          variant="outline" 
+                          className="border-gradient hover:bg-primary/10 transition-all duration-300 group/btn"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                          View Demo
+                        </Button>
+                      )}
                       {project.title === 'Console Chatbot with Gemini API' ? (
                         <Button 
                           variant="outline" 
