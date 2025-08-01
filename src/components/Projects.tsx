@@ -1,7 +1,7 @@
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { ExternalLink, Github, MapPin, MessageCircle, Brain } from 'lucide-react';
+import { ExternalLink, Github, MapPin, MessageCircle, Brain, Globe } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -49,6 +49,22 @@ const Projects = () => {
       technologies: ['Python', 'Transformers', 'PyTorch', 'Telugu NLP', 'AI/ML'],
       status: 'In Development',
       color: 'from-purple-500 to-pink-500'
+    },
+    {
+      title: 'Naa Ooru Naa Sarvam – My Village, My Everything',
+      description: 'A community-driven web platform built to preserve and promote the cultural and linguistic identity of rural India. The application enables users to contribute voice, text, and video data in Telugu, helping create an open-source dataset for regional AI and NLP projects.',
+      icon: Globe,
+      highlights: [
+        'Audio, text, and video data submission',
+        'Real-time Telugu ↔ English language toggle',
+        'Login system to track user contributions',
+        'Personal profile with contribution analytics',
+        'Built entirely with Streamlit for easy deployment',
+        'Motivational content to inspire local participation'
+      ],
+      technologies: ['Streamlit', 'Python', 'SQLite', 'Telugu NLP', 'Multilingual UI'],
+      status: 'Completed',
+      color: 'from-orange-500 to-red-500'
     }
   ];
 
