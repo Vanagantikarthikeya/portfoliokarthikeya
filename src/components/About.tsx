@@ -1,9 +1,7 @@
 import { GraduationCap, MapPin, Target, Heart } from 'lucide-react';
 import { Card } from './ui/card';
-
 const About = () => {
-  return (
-    <section id="about" className="py-20 relative">
+  return <section id="about" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -70,13 +68,15 @@ const About = () => {
           </div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-2 gap-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="grid grid-cols-2 gap-6 animate-fade-in" style={{
+          animationDelay: '0.3s'
+        }}>
             <Card className="p-6 card-gradient border-gradient shadow-card hover:shadow-glow transition-smooth">
               <div className="text-center space-y-2">
                 <div className="w-12 h-12 hero-gradient rounded-full flex items-center justify-center mx-auto">
                   <GraduationCap className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gradient">2024</h3>
+                <h3 className="text-2xl font-bold text-gradient">2026</h3>
                 <p className="text-sm text-muted-foreground">Graduation Year</p>
               </div>
             </Card>
@@ -113,8 +113,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
