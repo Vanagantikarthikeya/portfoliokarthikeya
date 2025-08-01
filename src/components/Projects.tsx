@@ -1,72 +1,10 @@
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { ExternalLink, Github, MapPin, MessageCircle, Brain, Globe } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
+import { projects } from '../data/portfolio';
 
 const Projects = () => {
-  const projects = [
-    {
-      title: 'Mood-Based Navigation App',
-      description: 'An innovative ASP.NET application that provides personalized location suggestions based on user mood. Integrated with Google Maps API and Events API to offer tailored recommendations for entertainment, dining, and activities.',
-      icon: MapPin,
-      highlights: [
-        'Built during Hackathon at Pallavi Engineering College',
-        'Google Maps API integration',
-        'Events API for real-time suggestions',
-        'Personalized mood-based algorithms',
-        'Interactive user interface'
-      ],
-      technologies: ['ASP.NET', 'C#', 'Google Maps API', 'Events API', 'JavaScript'],
-      status: 'Completed',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      title: 'Console Chatbot with Gemini API',
-      description: 'A powerful console-based chatbot developed using just 10 lines of .NET code. Demonstrates advanced prompt engineering techniques with Gemini API for intelligent and contextual responses.',
-      icon: MessageCircle,
-      highlights: [
-        'Minimal code implementation (10 lines)',
-        'Advanced prompt engineering',
-        'Gemini API integration',
-        'Intelligent conversation handling',
-        'Efficient response generation'
-      ],
-      technologies: ['.NET', 'C#', 'Gemini API', 'Prompt Engineering'],
-      status: 'Open Source',
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      title: 'Viswam AI - Telugu LLM',
-      description: 'A groundbreaking Telugu Large Language Model developed at IIIT Hyderabad. Focused on creating AI that understands and processes native Telugu language, making artificial intelligence more accessible to regional communities.',
-      icon: Brain,
-      highlights: [
-        'Regional Language Model for Telugu',
-        'Developed at IIIT Hyderabad',
-        'Backend optimization and scaling',
-        'Advanced prompt tuning',
-        'Cultural context understanding'
-      ],
-      technologies: ['Python', 'Transformers', 'PyTorch', 'Telugu NLP', 'AI/ML'],
-      status: 'In Development',
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      title: 'Naa Ooru Naa Sarvam – My Village, My Everything',
-      description: 'A community-driven web platform built to preserve and promote the cultural and linguistic identity of rural India. The application enables users to contribute voice, text, and video data in Telugu, helping create an open-source dataset for regional AI and NLP projects.',
-      icon: Globe,
-      highlights: [
-        'Audio, text, and video data submission',
-        'Real-time Telugu ↔ English language toggle',
-        'Login system to track user contributions',
-        'Personal profile with contribution analytics',
-        'Built entirely with Streamlit for easy deployment',
-        'Motivational content to inspire local participation'
-      ],
-      technologies: ['Streamlit', 'Python', 'SQLite', 'Telugu NLP', 'Multilingual UI'],
-      status: 'Completed',
-      color: 'from-orange-500 to-red-500'
-    }
-  ];
 
   return (
     <section id="projects" className="py-20 relative">

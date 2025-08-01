@@ -1,6 +1,7 @@
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Download, FileText, Award, Briefcase } from 'lucide-react';
+import { portfolioStats } from '../data/portfolio';
 
 const Resume = () => {
   return (
@@ -34,7 +35,7 @@ const Resume = () => {
                 <div className="space-y-3 text-left">
                   <div className="flex items-center space-x-3">
                     <Award className="h-5 w-5 text-primary" />
-                    <span className="text-sm">6+ Professional Certifications</span>
+                    <span className="text-sm">{portfolioStats.certificationsCount}+ Professional Certifications</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Briefcase className="h-5 w-5 text-primary" />
@@ -42,7 +43,7 @@ const Resume = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <FileText className="h-5 w-5 text-primary" />
-                    <span className="text-sm">3+ Featured Projects</span>
+                    <span className="text-sm">{portfolioStats.projectsCount}+ Featured Projects</span>
                   </div>
                 </div>
 
@@ -101,9 +102,9 @@ const Resume = () => {
           {/* Resume Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-slide-up" style={{ animationDelay: '0.5s' }}>
             {[
-              { label: 'Projects Built', value: '3+', icon: '🚀' },
-              { label: 'Certifications', value: '6+', icon: '🏆' },
-              { label: 'Technologies', value: '10+', icon: '💻' }
+              { label: 'Projects Built', value: `${portfolioStats.projectsCount}+`, icon: '🚀' },
+              { label: 'Certifications', value: `${portfolioStats.certificationsCount}+`, icon: '🏆' },
+              { label: 'Technologies', value: `${portfolioStats.technologiesCount}+`, icon: '💻' }
             ].map((stat) => (
               <Card key={stat.label} className="p-4 text-center card-gradient border-gradient shadow-card hover:shadow-glow transition-smooth">
                 <div className="space-y-2">

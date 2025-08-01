@@ -1,60 +1,14 @@
 import { Card } from './ui/card';
 import { Progress } from './ui/progress';
 import { Badge } from './ui/badge';
-import { Code2, Brain, Globe, Zap, Database, Cpu } from 'lucide-react';
+import { Code2, Brain, Globe, Database } from 'lucide-react';
+import { skillCategories as skillCategoriesData, certifications } from '../data/portfolio';
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: '.NET Development',
-      icon: Code2,
-      skills: [
-        { name: 'C#', level: 90 },
-        { name: 'ASP.NET', level: 85 },
-        { name: '.NET Core', level: 60 },
-        { name: 'Entity Framework', level: 60 }
-      ]
-    },
-    {
-      title: 'AI & Machine Learning',
-      icon: Brain,
-      skills: [
-        { name: 'Prompt Engineering', level: 95 },
-        { name: 'LLM Development', level: 80 },
-        { name: 'AI Integration', level: 85 },
-        { name: 'Gemini API', level: 90 }
-      ]
-    },
-    {
-      title: 'Web Development',
-      icon: Globe,
-      skills: [
-        { name: 'JavaScript', level: 50 },
-        { name: 'Bootstrap', level: 80 },
-        { name: 'HTML/CSS', level: 90 },
-        { name: 'REST APIs', level: 50 }
-      ]
-    },
-    {
-      title: 'Microsoft Technologies',
-      icon: Database,
-      skills: [
-        { name: 'Microsoft Fabric', level: 75 },
-        { name: 'Power Platforms', level: 70 },
-        { name: 'Azure Services', level: 65 },
-        { name: 'SQL Server', level: 80 }
-      ]
-    }
-  ];
-
-  const certifications = [
-    { name: 'Foundation of C# - Microsoft (FreeCodeCamp)', color: 'bg-blue-500' },
-    { name: 'Getting Started with AI - IBM', color: 'bg-green-500' },
-    { name: 'JavaScript - Infosys', color: 'bg-yellow-500' },
-    { name: 'Bootstrap - Infosys', color: 'bg-purple-500' },
-    { name: 'Prompting - Simplilearn', color: 'bg-pink-500' },
-    { name: 'AI Data Engineering - Reliance Foundation', color: 'bg-indigo-500' }
-  ];
+  const skillCategories = skillCategoriesData.map((category, index) => ({
+    ...category,
+    icon: [Code2, Brain, Globe, Database][index]
+  }));
 
   return (
     <section id="skills" className="py-20 relative">
