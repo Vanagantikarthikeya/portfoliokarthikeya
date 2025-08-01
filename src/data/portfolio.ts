@@ -2,19 +2,20 @@ import { MapPin, MessageCircle, Brain, Globe } from 'lucide-react';
 
 export const projects = [
   {
-    title: 'Mood-Based Navigation App',
-    description: 'An innovative ASP.NET application that provides personalized location suggestions based on user mood. Integrated with Google Maps API and Events API to offer tailored recommendations for entertainment, dining, and activities.',
-    icon: MapPin,
+    title: 'Naa Ooru Naa Sarvam – My Village, My Everything',
+    description: 'A community-driven web platform built to preserve and promote the cultural and linguistic identity of rural India. The application enables users to contribute voice, text, and video data in Telugu, helping create an open-source dataset for regional AI and NLP projects.',
+    icon: Globe,
     highlights: [
-      'Built during Hackathon at Pallavi Engineering College',
-      'Google Maps API integration',
-      'Events API for real-time suggestions',
-      'Personalized mood-based algorithms',
-      'Interactive user interface'
+      'Audio, text, and video data submission',
+      'Real-time Telugu ↔ English language toggle',
+      'Login system to track user contributions',
+      'Personal profile with contribution analytics',
+      'Built entirely with Streamlit for easy deployment',
+      'Motivational content to inspire local participation'
     ],
-    technologies: ['ASP.NET', 'C#', 'Google Maps API', 'Events API', 'JavaScript'],
-    status: 'In Development',
-    color: 'from-blue-500 to-cyan-500'
+    technologies: ['Streamlit', 'Python', 'SQLite', 'Telugu NLP', 'Multilingual UI'],
+    status: 'Completed',
+    color: 'from-orange-500 to-red-500'
   },
   {
     title: 'Console Chatbot with Gemini API',
@@ -47,20 +48,19 @@ export const projects = [
     color: 'from-purple-500 to-pink-500'
   },
   {
-    title: 'Naa Ooru Naa Sarvam – My Village, My Everything',
-    description: 'A community-driven web platform built to preserve and promote the cultural and linguistic identity of rural India. The application enables users to contribute voice, text, and video data in Telugu, helping create an open-source dataset for regional AI and NLP projects.',
-    icon: Globe,
+    title: 'Mood-Based Navigation App',
+    description: 'An innovative ASP.NET application that provides personalized location suggestions based on user mood. Integrated with Google Maps API and Events API to offer tailored recommendations for entertainment, dining, and activities.',
+    icon: MapPin,
     highlights: [
-      'Audio, text, and video data submission',
-      'Real-time Telugu ↔ English language toggle',
-      'Login system to track user contributions',
-      'Personal profile with contribution analytics',
-      'Built entirely with Streamlit for easy deployment',
-      'Motivational content to inspire local participation'
+      'Built during Hackathon at Pallavi Engineering College',
+      'Google Maps API integration',
+      'Events API for real-time suggestions',
+      'Personalized mood-based algorithms',
+      'Interactive user interface'
     ],
-    technologies: ['Streamlit', 'Python', 'SQLite', 'Telugu NLP', 'Multilingual UI'],
-    status: 'Completed',
-    color: 'from-orange-500 to-red-500'
+    technologies: ['ASP.NET', 'C#', 'Google Maps API', 'Events API', 'JavaScript'],
+    status: 'In Development',
+    color: 'from-blue-500 to-cyan-500'
   }
 ];
 
