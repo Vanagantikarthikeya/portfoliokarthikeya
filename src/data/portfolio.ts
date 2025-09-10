@@ -48,6 +48,38 @@ export const projects = [
     color: 'from-purple-500 to-pink-500'
   },
   {
+    title: '.NET Builder',
+    description: 'A tool that builds .NET projects based on user prompts. This innovative development platform streamlines the .NET project creation process through intelligent prompt interpretation and automated code generation.',
+    icon: Brain,
+    highlights: [
+      'Prompt-based project generation',
+      'Automated .NET scaffolding',
+      'Intelligent code structure creation',
+      'User-friendly interface',
+      'Live project preview'
+    ],
+    technologies: ['.NET', 'C#', 'AI/ML', 'Prompt Engineering', 'Web APIs'],
+    status: 'In Development',
+    color: 'from-blue-500 to-indigo-500',
+    liveLink: 'https://net-builder-457985c7.base44.app'
+  },
+  {
+    title: 'Excel-like App',
+    description: 'An Excel-style application with prompt-based data cleaning/management and link-sharing features. Provides advanced spreadsheet functionality with AI-powered data processing capabilities.',
+    icon: Globe,
+    highlights: [
+      'Excel-style interface',
+      'Prompt-based data cleaning',
+      'Data management tools',
+      'Link sharing functionality',
+      'Advanced filtering and sorting'
+    ],
+    technologies: ['JavaScript', 'React', 'AI/ML', 'Data Processing', 'Web APIs'],
+    status: 'In Development',
+    color: 'from-emerald-500 to-green-500',
+    liveLink: 'https://karthikeya-excel-88523531.base44.app'
+  },
+  {
     title: 'Mood-Based Navigation App',
     description: 'An innovative ASP.NET application that provides personalized location suggestions based on user mood. Integrated with Google Maps API and Events API to offer tailored recommendations for entertainment, dining, and activities.',
     icon: MapPin,
@@ -70,7 +102,8 @@ export const certifications = [
   { name: 'JavaScript - Infosys', color: 'bg-yellow-500' },
   { name: 'Bootstrap - Infosys', color: 'bg-purple-500' },
   { name: 'Prompting - Simplilearn', color: 'bg-pink-500' },
-  { name: 'AI Data Engineering - Reliance Foundation', color: 'bg-indigo-500' }
+  { name: 'AI Data Engineering - Reliance Foundation', color: 'bg-indigo-500' },
+  { name: 'OCI AI Foundation Associate', color: 'bg-orange-500' }
 ];
 
 export const skillCategories = [
@@ -102,15 +135,21 @@ export const skillCategories = [
     ]
   },
   {
-    title: 'Microsoft Technologies',
+    title: 'Cloud & Microsoft Technologies',
     skills: [
       { name: 'Microsoft Fabric', level: 75 },
       { name: 'Power Platforms', level: 70 },
       { name: 'Azure Services', level: 65 },
-      { name: 'SQL Server', level: 80 }
+      { name: 'SQL Server', level: 80 },
+      { name: 'Handling Oracle Cloud', level: 70 }
     ]
   }
 ];
+
+// Personal brand
+export const personalBrand = {
+  tagline: "Vibe Coder - Turning ideas into intelligent solutions"
+};
 
 // Computed values for dynamic counts
 export const portfolioStats = {
