@@ -1,16 +1,10 @@
 import { Button } from './ui/button';
 import { Download, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { portfolioStats } from '../data/portfolio';
 // import profileImage from '../assets/profile-image.jpg';
 
 const Hero = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  };
   return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 hero-gradient opacity-10"></div>
@@ -27,22 +21,24 @@ const Hero = () => {
               <p className="text-primary font-medium text-lg">Hello, I'm</p>
               <h1 className="text-5xl md:text-7xl font-bold text-gradient leading-tight">Vanaganti Karthikeya</h1>
               <h2 className="text-2xl md:text-3xl text-muted-foreground font-light">
-                AI Developer | .NET Enthusiast | Tech Explorer
+                AI Developer | .NET Enthusiast | <span className="text-gradient font-semibold">Vibe Coder</span>
               </h2>
             </div>
 
             <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-              Passionate about building intelligent systems with AI, .NET, and modern web technologies. 
+              Passionate <span className="text-gradient font-medium">Vibe Coder</span> building intelligent systems with AI, .NET, and modern web technologies. 
               Currently developing cutting-edge solutions and exploring the frontiers of artificial intelligence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button onClick={() => scrollToSection('projects')} className="hero-gradient shadow-glow hover:shadow-hero transition-bounce text-lg px-8 py-6">
-                View Projects
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link to="/projects">
+                <Button className="hero-gradient shadow-glow hover:shadow-hero transition-bounce text-lg px-8 py-6">
+                  View Projects
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
               
-              <Button variant="outline" onClick={() => scrollToSection('resume')} className="border-gradient text-lg px-8 py-6 hover:bg-primary/10 transition-bounce">
+              <Button variant="outline" className="border-gradient text-lg px-8 py-6 hover:bg-primary/10 transition-bounce">
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
               </Button>
@@ -51,11 +47,11 @@ const Hero = () => {
             {/* Quick Stats */}
             <div className="flex flex-wrap gap-8 pt-8 text-center md:text-left">
               <div className="space-y-1">
-                <p className="text-3xl font-bold text-gradient">4+</p>
+                <p className="text-3xl font-bold text-gradient">{portfolioStats.projectsCount}+</p>
                 <p className="text-sm text-muted-foreground">Projects Built</p>
               </div>
               <div className="space-y-1">
-                <p className="text-3xl font-bold text-gradient">6+</p>
+                <p className="text-3xl font-bold text-gradient">{portfolioStats.certificationsCount}+</p>
                 <p className="text-sm text-muted-foreground">Certifications</p>
               </div>
               <div className="space-y-1">

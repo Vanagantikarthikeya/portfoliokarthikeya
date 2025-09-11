@@ -88,7 +88,17 @@ const Projects = () => {
 
                     {/* Action Buttons */}
                     <div className="flex flex-wrap gap-4 pt-4">
-                      {project.title === 'Console Chatbot with Gemini API' ? (
+                      {/* Live Demo Button */}
+                      {project.liveLink ? (
+                        <Button 
+                          variant="outline" 
+                          className="border-gradient hover:bg-primary/10 transition-all duration-300 group/btn"
+                          onClick={() => window.open(project.liveLink, '_blank')}
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                          Live Demo
+                        </Button>
+                      ) : project.title === 'Console Chatbot with Gemini API' ? (
                         <Button 
                           variant="outline" 
                           className="border-gradient hover:bg-primary/10 transition-all duration-300 group/btn"
@@ -101,11 +111,14 @@ const Projects = () => {
                         <Button 
                           variant="outline" 
                           className="border-gradient hover:bg-primary/10 transition-all duration-300 group/btn"
+                          disabled
                         >
                           <ExternalLink className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                          View Demo
+                          Demo Coming Soon
                         </Button>
                       )}
+
+                      {/* Source Code Button */}
                       {project.title === 'Console Chatbot with Gemini API' ? (
                         <Button 
                           variant="outline" 
@@ -118,6 +131,10 @@ const Projects = () => {
                       ) : project.title === 'Viswam AI - Telugu LLM' ? (
                         <div className="text-sm text-muted-foreground italic">
                           Presently working on it with Swecha Organization
+                        </div>
+                      ) : project.title === '.NET Builder' || project.title === 'Excel-like App' ? (
+                        <div className="text-sm text-muted-foreground italic">
+                          Source code available upon request
                         </div>
                       ) : (
                         <Button 

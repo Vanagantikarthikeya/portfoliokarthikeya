@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,13 +14,6 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
@@ -37,31 +32,33 @@ const Header = () => {
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {[
-              { name: 'Home', id: 'home' },
-              { name: 'About', id: 'about' },
-              { name: 'Skills', id: 'skills' },
-              { name: 'Projects', id: 'projects' },
-              { name: 'Resume', id: 'resume' },
-              { name: 'Contact', id: 'contact' }
+              { name: 'Home', path: '/' },
+              { name: 'Skills', path: '/skills' },
+              { name: 'Projects', path: '/projects' },
+              { name: 'Certifications', path: '/certifications' },
+              { name: 'Contact', path: '/contact' }
             ].map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-primary transition-smooth relative group"
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`text-foreground hover:text-primary transition-smooth relative group ${
+                  location.pathname === item.path ? 'text-primary' : ''
+                }`}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </button>
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  location.pathname === item.path ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
             ))}
           </nav>
 
           {/* Contact Button */}
-          <Button 
-            onClick={() => scrollToSection('contact')} 
-            className="hidden md:block hero-gradient shadow-glow hover:shadow-hero transition-bounce"
-          >
-            Let's Talk
-          </Button>
+          <Link to="/contact">
+            <Button className="hidden md:block hero-gradient shadow-glow hover:shadow-hero transition-bounce">
+              Let's Talk
+            </Button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <Button 
