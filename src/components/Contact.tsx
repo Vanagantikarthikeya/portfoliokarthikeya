@@ -35,22 +35,37 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate network delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const { supabase } = await import('@/integrations/supabase/client');
       
-      // Here you would typically send the email via API
-      // For now, we'll just show a success message
+      // Call the edge function to send email
+      const { data: result, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: data.name,
+          email: data.email,
+          message: data.message
+        }
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      if (!result.success) {
+        throw new Error(result.error || 'Failed to send message');
+      }
+      
       toast({
-        title: "Message Sent Successfully!",
+        title: "Message Sent Successfully! ✉️",
         description: `Thank you ${data.name}! I'll get back to you at ${data.email} soon.`,
       });
 
       // Reset form
       form.reset();
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Contact form error:', error);
       toast({
         title: "Failed to Send Message",
-        description: "Something went wrong. Please try again later.",
+        description: error.message || "Something went wrong. Please try again later.",
         variant: "destructive"
       });
     } finally {
