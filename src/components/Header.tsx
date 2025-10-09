@@ -1,10 +1,21 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from './ui/sheet';
+import { Menu } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'Skills', path: '/skills' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Certifications', path: '/certifications' },
+    { name: 'Contact', path: '/contact' }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,13 +42,7 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {[
-              { name: 'Home', path: '/' },
-              { name: 'Skills', path: '/skills' },
-              { name: 'Projects', path: '/projects' },
-              { name: 'Certifications', path: '/certifications' },
-              { name: 'Contact', path: '/contact' }
-            ].map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
@@ -60,14 +65,44 @@ const Header = () => {
             </Button>
           </Link>
 
-          {/* Mobile Menu Button */}
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="md:hidden border-gradient"
-          >
-            Menu
-          </Button>
+          {/* Mobile Menu */}
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="md:hidden border-gradient"
+              >
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-64">
+              <SheetHeader>
+                <SheetTitle className="text-left">Navigation</SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col space-y-4 mt-8">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`text-lg py-2 px-4 rounded-lg transition-smooth ${
+                      location.pathname === item.path 
+                        ? 'bg-primary/10 text-primary font-medium' 
+                        : 'text-foreground hover:bg-muted'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  <Button className="w-full hero-gradient shadow-glow">
+                    Let's Talk
+                  </Button>
+                </Link>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
