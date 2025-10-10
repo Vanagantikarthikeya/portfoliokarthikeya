@@ -107,12 +107,6 @@
   }
 }
 
-/* Electric border effect */
-:root {
-  --electric-cyan: #00fffb;
-  --electric-yellow: #f2ff00;
-}
-
 @layer base {
   * {
     @apply border-border;
@@ -183,68 +177,6 @@
     animation: fadeIn 0.8s ease-out forwards;
     opacity: 0;
   }
-
-  /* Electric Navigation Effects */
-  .electric-nav {
-    position: relative;
-    border: 2px solid var(--electric-cyan);
-    box-shadow: 
-      0 0 10px var(--electric-cyan),
-      inset 0 0 10px rgba(0, 255, 251, 0.1);
-  }
-
-  .electric-nav::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    border-radius: inherit;
-    padding: 2px;
-    background: linear-gradient(-30deg, 
-      rgba(0, 255, 251, 0.4), 
-      transparent, 
-      rgba(0, 255, 251, 0.4)
-    );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    animation: electricBorder 3s linear infinite;
-  }
-
-  .nav-link-electric {
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  .nav-link-electric::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--electric-cyan);
-    box-shadow: 0 0 8px var(--electric-cyan);
-    transition: width 0.3s ease;
-  }
-
-  .nav-link-electric:hover::after,
-  .nav-link-electric.active::after {
-    width: 100%;
-  }
-
-  .nav-link-electric:hover {
-    color: var(--electric-cyan);
-    text-shadow: 0 0 10px rgba(0, 255, 251, 0.5);
-  }
-
-  .logo-electric {
-    border: 2px solid var(--electric-cyan);
-    box-shadow: 
-      0 0 15px var(--electric-cyan),
-      inset 0 0 15px rgba(0, 255, 251, 0.2);
-    animation: pulseGlow 2s ease-in-out infinite;
-  }
 }
 
 @layer utilities {
@@ -282,27 +214,5 @@
 @keyframes fadeIn {
   to {
     opacity: 1;
-  }
-}
-
-@keyframes electricBorder {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 
-      0 0 15px var(--electric-cyan),
-      inset 0 0 15px rgba(0, 255, 251, 0.2);
-  }
-  50% {
-    box-shadow: 
-      0 0 25px var(--electric-cyan),
-      inset 0 0 25px rgba(0, 255, 251, 0.4);
   }
 }

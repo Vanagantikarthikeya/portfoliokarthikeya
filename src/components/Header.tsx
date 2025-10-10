@@ -28,16 +28,16 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-      isScrolled ? 'bg-background/95 backdrop-blur-md electric-nav' : 'bg-background/80 backdrop-blur-sm'
+      isScrolled ? 'bg-background/95 backdrop-blur-md shadow-card' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center logo-electric bg-background">
-              <span className="font-bold text-lg" style={{ color: 'var(--electric-cyan)' }}>VK</span>
+            <div className="w-10 h-10 hero-gradient rounded-lg flex items-center justify-center shadow-glow">
+              <span className="text-white font-bold text-lg">VK</span>
             </div>
-            <span className="font-bold text-xl" style={{ color: 'var(--electric-cyan)' }}>Karthikeya</span>
+            <span className="font-bold text-xl text-gradient">Karthikeya</span>
           </div>
 
           {/* Navigation */}
@@ -46,26 +46,21 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`nav-link-electric font-medium ${
-                  location.pathname === item.path ? 'active' : ''
+                className={`text-foreground hover:text-primary transition-smooth relative group ${
+                  location.pathname === item.path ? 'text-primary' : ''
                 }`}
-                style={{ color: location.pathname === item.path ? 'var(--electric-cyan)' : 'inherit' }}
               >
                 {item.name}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  location.pathname === item.path ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </Link>
             ))}
           </nav>
 
           {/* Contact Button */}
           <Link to="/contact">
-            <Button 
-              className="hidden md:block transition-bounce border-2 bg-background/50 hover:bg-background"
-              style={{ 
-                borderColor: 'var(--electric-cyan)',
-                color: 'var(--electric-cyan)',
-                boxShadow: '0 0 15px rgba(0, 255, 251, 0.5)'
-              }}
-            >
+            <Button className="hidden md:block hero-gradient shadow-glow hover:shadow-hero transition-bounce">
               Let's Talk
             </Button>
           </Link>
