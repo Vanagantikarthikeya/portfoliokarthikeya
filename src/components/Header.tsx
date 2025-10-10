@@ -46,10 +46,10 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`nav-link-electric ${
+                className={`nav-link-electric text-lg font-medium ${
                   location.pathname === item.path 
-                    ? 'text-[hsl(var(--electric-cyan))]' 
-                    : 'text-foreground hover:text-[hsl(var(--electric-cyan))]'
+                    ? 'text-primary' 
+                    : 'text-foreground hover:text-primary'
                 }`}
               >
                 {item.name}
