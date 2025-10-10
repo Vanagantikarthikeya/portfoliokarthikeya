@@ -46,14 +46,13 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-foreground hover:text-primary transition-smooth relative group ${
-                  location.pathname === item.path ? 'text-primary' : ''
+                className={`nav-link-electric ${
+                  location.pathname === item.path 
+                    ? 'text-[hsl(var(--electric-cyan))]' 
+                    : 'text-foreground hover:text-[hsl(var(--electric-cyan))]'
                 }`}
               >
                 {item.name}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                  location.pathname === item.path ? 'w-full' : 'w-0 group-hover:w-full'
-                }`}></span>
               </Link>
             ))}
           </nav>
