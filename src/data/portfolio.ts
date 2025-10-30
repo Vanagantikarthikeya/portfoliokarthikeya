@@ -78,21 +78,6 @@ export const projects = [
     status: 'In Development',
     color: 'from-emerald-500 to-green-500',
     liveLink: 'https://karthikeya-excel-88523531.base44.app'
-  },
-  {
-    title: 'Mood-Based Navigation App',
-    description: 'An innovative ASP.NET application that provides personalized location suggestions based on user mood. Integrated with Google Maps API and Events API to offer tailored recommendations for entertainment, dining, and activities.',
-    icon: MapPin,
-    highlights: [
-      'Built during Hackathon at Pallavi Engineering College',
-      'Google Maps API integration',
-      'Events API for real-time suggestions',
-      'Personalized mood-based algorithms',
-      'Interactive user interface'
-    ],
-    technologies: ['ASP.NET', 'C#', 'Google Maps API', 'Events API', 'JavaScript'],
-    status: 'In Development',
-    color: 'from-blue-500 to-cyan-500'
   }
 ];
 

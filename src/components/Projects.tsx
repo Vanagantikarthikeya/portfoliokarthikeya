@@ -1,10 +1,13 @@
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react';
 import { projects } from '../data/portfolio';
+import { useState } from 'react';
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? projects : projects.slice(0, 4);
 
   return (
     <section id="projects" className="py-20 relative">
@@ -19,7 +22,7 @@ const Projects = () => {
         </div>
 
         <div className="grid lg:grid-cols-1 gap-8">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <Card 
               key={project.title} 
               className="group overflow-hidden card-gradient border-gradient shadow-card hover:shadow-glow transition-all duration-500 animate-slide-up"
@@ -156,19 +159,27 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Additional Projects CTA */}
-        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <p className="text-muted-foreground mb-6">
-            More exciting projects coming soon! Follow my journey on GitHub.
-          </p>
-          <Button 
-            className="hero-gradient shadow-glow hover:shadow-hero transition-bounce"
-            onClick={() => window.open('https://github.com/Vanagantikarthikeya?tab=repositories', '_blank')}
-          >
-            <Github className="h-4 w-4 mr-2" />
-            View All Projects
-          </Button>
-        </div>
+        {/* View All Projects Button */}
+        {projects.length > 4 && (
+          <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+            <Button 
+              className="hero-gradient shadow-glow hover:shadow-hero transition-bounce"
+              onClick={() => setShowAll(!showAll)}
+            >
+              {showAll ? (
+                <>
+                  <ChevronUp className="h-4 w-4 mr-2" />
+                  Show Less
+                </>
+              ) : (
+                <>
+                  <ChevronDown className="h-4 w-4 mr-2" />
+                  View All Projects
+                </>
+              )}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
