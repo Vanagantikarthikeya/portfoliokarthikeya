@@ -2,7 +2,7 @@ import { Button } from './ui/button';
 import { Download, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { portfolioStats } from '../data/portfolio';
-// import profileImage from '../assets/profile-image.jpg';
+import AIEnergyOrb from './AIEnergyOrb';
 
 const Hero = () => {
   return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -68,9 +68,7 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 hero-gradient rounded-full blur-2xl opacity-50 animate-glow"></div>
               <img src="/lovable-uploads/ac5c7bab-56a5-4a5b-9643-2be65059c637.png" alt="Vanaganti Karthikeya" className="relative w-80 h-80 rounded-full object-cover shadow-hero border-4 border-primary/20 animate-float" />
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 hero-gradient rounded-full flex items-center justify-center shadow-glow">
-                <span className="text-white font-bold text-lg">AI</span>
-              </div>
+              <AIEnergyOrb />
             </div>
           </div>
         </div>
