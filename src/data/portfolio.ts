@@ -15,7 +15,8 @@ export const projects = [
     ],
     technologies: ['Streamlit', 'Python', 'SQLite', 'Telugu NLP', 'Multilingual UI'],
     status: 'Completed',
-    color: 'from-orange-500 to-red-500'
+    color: 'from-orange-500 to-red-500',
+    liveLink: 'https://naa-ooru-naa-sarvam.lovable.app'
   },
   {
     title: 'Console Chatbot with Gemini API',
@@ -33,21 +34,6 @@ export const projects = [
     color: 'from-green-500 to-emerald-500'
   },
   {
-    title: 'Viswam AI - Telugu LLM',
-    description: 'A groundbreaking Telugu Large Language Model developed at IIIT Hyderabad. Focused on creating AI that understands and processes native Telugu language, making artificial intelligence more accessible to regional communities.',
-    icon: Brain,
-    highlights: [
-      'Regional Language Model for Telugu',
-      'Developed at IIIT Hyderabad',
-      'Backend optimization and scaling',
-      'Advanced prompt tuning',
-      'Cultural context understanding'
-    ],
-    technologies: ['Python', 'Transformers', 'PyTorch', 'Telugu NLP', 'AI/ML'],
-    status: 'In Development',
-    color: 'from-purple-500 to-pink-500'
-  },
-  {
     title: '.NET Builder',
     description: 'A tool that builds .NET projects based on user prompts. This innovative development platform streamlines the .NET project creation process through intelligent prompt interpretation and automated code generation.',
     icon: Brain,
@@ -61,7 +47,7 @@ export const projects = [
     technologies: ['.NET', 'C#', 'AI/ML', 'Prompt Engineering', 'Web APIs'],
     status: 'In Development',
     color: 'from-blue-500 to-indigo-500',
-    liveLink: 'https://net-builder-457985c7.base44.app'
+    liveLink: 'https://dotnetbuilder.base44.app'
   },
   {
     title: 'Excel-like App',
@@ -77,7 +63,7 @@ export const projects = [
     technologies: ['JavaScript', 'React', 'AI/ML', 'Data Processing', 'Web APIs'],
     status: 'In Development',
     color: 'from-emerald-500 to-green-500',
-    liveLink: 'https://karthikeya-excel-88523531.base44.app'
+    liveLink: 'https://karthikeya-excel.base44.app'
   }
 ];
 
